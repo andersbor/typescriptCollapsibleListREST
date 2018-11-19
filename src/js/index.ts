@@ -18,6 +18,7 @@ placeholder.innerHTML = "Waiting for data ...";
 
 axios.get<IComment[]>(uri)
     .then(function (response: AxiosResponse<IComment[]>): void {
+        placeholder.innerHTML = "";
         addToDOM(response.data);
     })
     .catch(function (error: AxiosError): void {
